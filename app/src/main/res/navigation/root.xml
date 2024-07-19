@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.rapidor.shoppingmart.view.fragment.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.rapidor.shoppingmart.view.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_addToCartFragment"
+            app:destination="@id/addToCartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.rapidor.shoppingmart.view.fragment.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" >
+        <argument
+            android:name="productitem"
+            app:argType="com.rapidor.shoppingmart.model.ProductsItem" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_modalBottomSheetDialogFragment"
+            app:destination="@id/modalBottomSheetDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addToCartFragment"
+        android:name="com.rapidor.shoppingmart.view.fragment.AddToCartFragment"
+        android:label="fragment_add_to_cart"
+        tools:layout="@layout/fragment_add_to_cart" >
+        <action
+            android:id="@+id/action_addToCartFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+        <action
+            android:id="@+id/action_addToCartFragment_to_paymentSuccessfulFragment"
+            app:destination="@id/paymentSuccessfulFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentSuccessfulFragment"
+        android:name="com.rapidor.shoppingmart.view.fragment.PaymentSuccessfulFragment"
+        android:label="fragment_payment_successful"
+        tools:layout="@layout/fragment_payment_successful" >
+        <action
+            android:id="@+id/action_paymentSuccessfulFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+    </fragment>
+    <dialog
+        android:id="@+id/modalBottomSheetDialogFragment"
+        android:name="com.rapidor.shoppingmart.view.fragment.ModalBottomSheetDialogFragment"
+        android:label="ModalBottomSheetDialogFragment" >
+        <action
+            android:id="@+id/action_modalBottomSheetDialogFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2" />
+        <action
+            android:id="@+id/action_modalBottomSheetDialogFragment_to_addToCartFragment"
+            app:destination="@id/addToCartFragment" />
+    </dialog>
+</navigation>

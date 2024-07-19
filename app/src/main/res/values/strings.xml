@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ShoppingMart</string>
+    <string name="cartImage">cartImage</string>
+    <string name="search_product">Search Product...</string>
+    <string name="product_name">Product name</string>
+    <string name="_10_00">$10.00</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="product_title_description">Product title description</string>
+    <string name="start_shopping">START SHOPPING</string>
+    <string name="your_cart_is_empty">Your Cart is empty!</string>
+    <string name="proceed_to_payment">PROCEED TO PAYMENT</string>
+    <string name="dlr_1340_00">$ 1240.00</string>
+    <string name="_1_item">1 item</string>
+    <string name="vat">VAT</string>
+    <string name="dlr_40_00">$ 45.00</string>
+    <string name="dlr_1380_00">$ 1285.00</string>
+    <string name="sub_total">Sub total</string>
+</resources>

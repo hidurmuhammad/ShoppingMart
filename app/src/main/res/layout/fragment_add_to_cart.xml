@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".view.fragment.AddToCartFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartLineItemsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="48dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/cartSubTotal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/cart_item" />
+
+        <RelativeLayout
+            android:id="@+id/cartSubTotal"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:background="@drawable/custom_background"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toTopOf="@id/buttonCheckout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="50dp">
+
+            <TextView
+                android:id="@+id/subTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sub_total"
+                android:textColor="@color/white"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:layout_marginStart="16dp"
+                />
+
+            <TextView
+                android:id="@+id/subTotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/subTotal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="9dp"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="@string/dlr_1340_00"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/numberOfItemsInTheCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/subTotal"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="@string/_1_item"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/VAT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/numberOfItemsInTheCart"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="@string/vat"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/totalVAT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignEnd="@+id/VAT"
+                android:layout_marginEnd="9dp"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="@string/dlr_40_00"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/Total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/VAT"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="@string/_1_item"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/totalVAT"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="9dp"
+                android:fontFamily="@font/nunitosans_semibold"
+                android:text="@string/dlr_1380_00"
+                android:textColor="@color/white" />
+
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/buttonCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="56dp"
+            android:fontFamily="@font/nunitosans_semibold"
+            android:text="@string/proceed_to_payment"
+            android:textSize="11sp"
+            android:background="@drawable/custom_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewNoCartItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/your_cart_is_empty"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:textSize="22sp"
+            android:visibility="gone"
+            android:fontFamily="@font/nunitosans_semibold"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55" />
+
+        <ImageView
+            android:id="@+id/cartImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_baseline_add_shopping_cart_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.3"
+            app:layout_constraintTop_toTopOf="@+id/cartLineItemsRecyclerView" />
+
+        <Button
+            android:id="@+id/buttonStartShopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="@string/start_shopping"
+            android:visibility="gone"
+            android:fontFamily="@font/nunitosans_semibold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNoCartItem" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
